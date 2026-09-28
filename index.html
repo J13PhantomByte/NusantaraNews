@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="id" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NusantaraNews — Portal Berita Modern, Cepat &amp; Terpercaya</title>
+  <meta name="description" content="NusantaraNews: portal berita modern — nasional, internasional, teknologi, ekonomi, olahraga, lifestyle, politik. Cepat, responsif, dan SEO-friendly.">
+  <link rel="canonical" href="https://www.nusantara-news.example/">
+  <meta name="theme-color" content="#0d6efd">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="NusantaraNews — Portal Berita Modern">
+  <meta property="og:description" content="Berita terbaru nasional, teknologi, ekonomi, olahraga & lifestyle.">
+  <meta property="og:url" content="https://www.nusantara-news.example/">
+  <meta property="og:image" content="https://picsum.photos/seed/nusantaranews-og/1200/630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NusantaraNews — Portal Berita Modern">
+  <meta name="twitter:description" content="Berita terbaru, cepat, responsif, dan interaktif.">
+  <meta name="twitter:image" content="https://picsum.photos/seed/nusantaranews-og/1200/630">
+  <!--
+    SECURITY HEADERS (aktifkan di server / hosting, contoh Netlify/_headers atau Apache/.htaccess):
+    Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net; font-src 'self' https://cdn.jsdelivr.net; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+    X-Content-Type-Options: nosniff
+    Referrer-Policy: strict-origin-when-cross-origin
+    Permissions-Policy: camera=(), microphone=(), geolocation=()
+    Strict-Transport-Security: max-age=31536000; includeSubDomains (hanya HTTPS)
+    Catatan: HTML statis tidak bisa menegakkan header server-side; ini defense-in-depth di sisi server.
+  -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d6efd'/%3E%3Ctext x='16' y='22' font-size='18' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"NewsMediaOrganization","name":"NusantaraNews","url":"https://www.nusantara-news.example/","logo":"https://www.nusantara-news.example/assets/images/logo.png"}
+  </script>
+</head>
+<body>
+  <a class="visually-hidden-focusable btn btn-brand m-2" href="#main">Lewati ke konten utama</a>
+  <div id="readingProgress" aria-hidden="true"></div>
+
+  <!-- TOPBAR -->
+  <div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center py-1">
+      <div class="d-flex gap-3">
+        <span><i class="bi bi-calendar3 me-1"></i><time id="todayDate" datetime="2026-09-28">Senin, 28 September 2026</time></span>
+        <span class="d-none d-lg-inline"><i class="bi bi-cloud-sun me-1"></i>Jakarta 31°C</span>
+      </div>
+      <div class="d-flex gap-3">
+        <a href="#newsletter">Newsletter</a>
+        <a href="#">Redaksi</a>
+        <a href="#">Karier</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar navbar-expand-lg site-navbar sticky-top" aria-label="Navigasi utama">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span class="brand-name">Nusantara<span>News</span></span>
+        </a>
+        <div class="d-flex align-items-center gap-2 order-lg-last ms-auto ms-lg-0">
+          <button class="icon-btn" id="searchToggle" aria-label="Buka pencarian" aria-expanded="false" aria-controls="searchBar">
+            <i class="bi bi-search" aria-hidden="true"></i>
+          </button>
+          <button class="icon-btn" id="themeToggle" aria-label="Aktifkan mode gelap">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          </button>
+          <button class="navbar-toggler icon-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-label="Buka menu navigasi">
+            <i class="bi bi-list" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0" id="navLinks">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Nasional">Nasional</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Internasional">Internasional</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Teknologi">Teknologi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Ekonomi">Ekonomi</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Olahraga">Olahraga</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Lifestyle">Lifestyle</a></li>
+            <li class="nav-item"><a class="nav-link" href="#kategori" data-navcat="Politik">Politik</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SEARCH BAR (collapsible) -->
+    <div class="search-overlay d-none" id="searchBar">
+      <div class="container py-3">
+        <form id="searchForm" role="search" autocomplete="off">
+          <label class="visually-hidden" for="searchInput">Cari berita</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-search" aria-hidden="true"></i></span>
+            <input type="search" class="form-control form-control-lg" id="searchInput" placeholder="Cari berita: teknologi, timnas, ekonomi…" maxlength="100">
+            <button class="btn btn-brand" type="submit">Cari</button>
+          </div>
+        </form>
+        <p class="small text-muted mt-2 mb-0" id="searchMeta" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- MOBILE OFFCANVAS -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav" aria-labelledby="mobileNavLabel">
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title h5 mb-0" id="mobileNavLabel">Menu</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup menu"></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav aria-label="Menu mobile">
+          <ul class="list-unstyled d-grid gap-1" id="mobileLinks">
+            <li><a class="btn btn-light text-start w-100" href="index.html">🏠 Home</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Nasional">Nasional</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Internasional">Internasional</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Teknologi">Teknologi</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Ekonomi">Ekonomi</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Olahraga">Olahraga</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Lifestyle">Lifestyle</a></li>
+            <li><a class="btn btn-light text-start w-100" href="#kategori" data-navcat="Politik">Politik</a></li>
+          </ul>
+        </nav>
+        <hr>
+        <button class="btn btn-outline-secondary w-100" id="bookmarkNavBtn"><i class="bi bi-bookmark me-2"></i>Bookmark Saya (<span id="bookmarkCountNav">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREAKING NEWS -->
+  <div class="ticker-wrap" aria-label="Breaking news">
+    <div class="container d-flex align-items-center gap-3 py-2">
+      <span class="ticker-label"><span class="dot" aria-hidden="true"></span>BREAKING</span>
+      <div class="ticker flex-grow-1" aria-live="off">
+        <div class="ticker-track" id="tickerTrack"><!-- diisi JS, digandakan untuk loop mulus --></div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="container mt-4" aria-labelledby="heroTitle">
+      <h1 id="heroTitle" class="visually-hidden">Berita utama hari ini</h1>
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <article class="hero-main reveal" id="heroMain" aria-label="Berita utama"></article>
+        </div>
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h5 mb-0 fw-bold"><i class="bi bi-fire text-danger me-1"></i>Populer</h2>
+            <a href="#terbaru" class="small text-decoration-none">Lihat semua</a>
+          </div>
+          <div class="d-grid gap-2" id="popularList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER + SEARCH RESULT INFO -->
+    <section class="container mt-5" id="terbaru" aria-labelledby="latestTitle">
+      <div class="sec-head reveal"><span class="bar" aria-hidden="true"></span><h2 id="latestTitle">Berita Terbaru</h2></div>
+      <div class="d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Filter kategori" id="filterPills">
+        <button class="btn btn-outline-secondary filter-pill active" data-cat="Semua">Semua</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Nasional">Nasional</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Teknologi">Teknologi</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Ekonomi">Ekonomi</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Olahraga">Olahraga</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Lifestyle">Lifestyle</button>
+        <button class="btn btn-outline-secondary filter-pill" data-cat="Politik">Politik</button>
+      </div>
+      <p id="resultInfo" class="text-muted small" role="status" aria-live="polite"></p>
+      <div class="row g-3" id="newsGrid" aria-live="polite"></div>
+      <div id="emptyState" class="text-center py-5 d-none">
+        <i class="bi bi-search display-4 text-muted" aria-hidden="true"></i>
+        <h3 class="h5 mt-3">Tidak ada hasil ditemukan</h3>
+        <p class="text-muted">Coba kata kunci lain atau pilih kategori berbeda.</p>
+        <button class="btn btn-brand" id="resetFilterBtn">Reset filter</button>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary px-4" id="loadMoreBtn"><i class="bi bi-plus-circle me-1"></i>Muat Lebih Banyak</button>
+      </div>
+    </section>
+
+    <!-- TRENDING + SIDEBAR -->
+    <section class="container mt-5" aria-labelledby="trendTitle">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="sec-head reveal"><span class="bar" aria-hidden="true"></span><h2 id="trendTitle">Trending Minggu Ini</h2></div>
+          <ol class="list-unstyled" id="trendingList"></ol>
+        </div>
+        <div class="col-lg-5">
+          <div class="sec-head reveal"><span class="bar" aria-hidden="true"></span><h2>Bookmark Saya</h2></div>
+          <div class="card p-3" style="background:var(--surface);border-color:var(--border)">
+            <p class="text-muted small mb-2">Berita yang kamu simpan tersimpan lokal di perangkat ini.</p>
+            <div id="bookmarkList" class="d-grid gap-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY SECTIONS -->
+    <section class="container mt-5" id="kategori" aria-label="Berita per kategori">
+      <div class="sec-head reveal"><span class="bar" aria-hidden="true"></span><h2>Jelajah Kategori</h2></div>
+      <div id="categorySections" class="d-grid gap-5"></div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="container mt-5" id="newsletter" aria-labelledby="nlTitle">
+      <div class="newsletter p-4 p-md-5 reveal">
+        <div class="row align-items-center g-3">
+          <div class="col-md-6">
+            <h2 id="nlTitle" class="fw-bold mb-2">Jangan lewatkan berita terbaru.</h2>
+            <p class="mb-0 opacity-75">Dapatkan ringkasan berita penting setiap pagi. Gratis, tanpa spam.</p>
+          </div>
+          <div class="col-md-6">
+            <form id="newsletterForm" novalidate>
+              <label class="visually-hidden" for="nlEmail">Alamat email</label>
+              <div class="input-group">
+                <input type="email" class="form-control" id="nlEmail" placeholder="nama@email.com" maxlength="120" autocomplete="email" required>
+                <button class="btn btn-light fw-bold" type="submit"><i class="bi bi-send me-1"></i>Subscribe</button>
+              </div>
+              <div class="invalid-feedback d-block small mt-1" id="nlError" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer mt-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="brand-mark" aria-hidden="true">N</span>
+            <strong class="fs-5 text-white">NusantaraNews</strong>
+          </div>
+          <p class="small">Portal berita modern yang cepat, ringan, dan terpercaya. Diliput jurnalis berpengalaman dari seluruh Indonesia.</p>
+          <div class="d-flex gap-2" aria-label="Media sosial">
+            <a class="social-btn" href="#" aria-label="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a class="social-btn" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a class="social-btn" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <h3 class="h6 text-white">Navigasi</h3>
+          <ul class="list-unstyled small d-grid gap-1">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#terbaru">Terbaru</a></li>
+            <li><a href="#kategori">Kategori</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="h6 text-white">Kategori</h3>
+          <ul class="list-unstyled small d-grid gap-1" id="footerCats"></ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="h6 text-white">Tentang</h3>
+          <ul class="list-unstyled small d-grid gap-1">
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Pedoman Media Siber</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary">
+      <p class="small text-center mb-0">© 2026 NusantaraNews. Demo frontend — seluruh data bersifat fiktif untuk tujuan edukasi.</p>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Kembali ke atas"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+
+  <!-- TOAST -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite">
+    <div id="appToast" class="toast" role="status" aria-live="polite">
+      <div class="toast-header"><strong class="me-auto" id="toastTitle">Info</strong><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Tutup notifikasi"></button></div>
+      <div class="toast-body" id="toastMsg">…</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
